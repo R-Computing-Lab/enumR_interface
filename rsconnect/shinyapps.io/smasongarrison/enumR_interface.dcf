@@ -1,0 +1,11 @@
+name: enumR_interface
+title: enumR_interface
+account: smasongarrison
+server: shinyapps.io
+appId: 189191
+bundleId: 867325
+url: https://smasongarrison.shinyapps.io/enumR_interface/
+when: 1497467211.31133
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .gitattributes|.RData|server_original.R|serverX.R|ui_original.R|uiX.R

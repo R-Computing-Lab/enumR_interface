@@ -95,7 +95,7 @@ renderInputs <- function(prefix) {
       )
     ),
     p(actionButton(paste0(prefix, "_", "recalc"),
-                   "(Re-)run simulation", icon("random")
+                   "Re-run simulation", icon("random")
     ))
   )
 }
@@ -109,35 +109,29 @@ fluidPage(theme="simplex.min.css",
           
           # Application title
           tags$h2("Factor Enumeration: Creating Custom Model Fit Criteria with Simulations"),
-          p("By S. Mason Garrison (s.mason.garrison@gmail.com)"),p("More information available",
+          p("By S. Mason Garrison"),p("More information available",
                                       tags$a(href="https://www.dropbox.com/s/52s1t27jw4wzs6d/arp2017.pdf?dl=0", "here (ARP Poster)"),
                                       "and",
                                       tags$a(href="https://www.dropbox.com/s/vpflvbf4vd3s2nc/talk.pdf?dl=0", "here (Talk)"),
-                                      ". This project is a work in progress. This web interface is in alpha testing. Things will likely not work."),p("If you're interested in using the results of this tool in your research, please contact me. I'm happy to verify results."),
+                                      "."),
           hr(),
-        #  fluidRow(
-        #    column(6, tags$h3("Scenario A"))#,
-           # column(6, tags$h3("Scenario B"))
-        #  ),
+          
           fluidRow(
-            #column(6, 
-            renderInputs("a")),
-          #  column(6, renderInputs("b"))
-         # ),
+            column(6, 
+                   tags$h3("Simulation A")),
+            column(6, tags$h3("Simulation B"))
+          ),
           fluidRow(
-           # column(6,
-              #   if(!is.null(resultsA)){
-                     tableOutput('a_table')
-              #  }else{"Compiling"
-                     
-                #   }
-           # ),
-      #      column(6,
-     #              if(!is.null(resultsB)){
-      #               tableOutput('b_table')
-      #             }else{"Compiling"
-       #              
-        #           }
-          #  )
+            column(6, 
+                   renderInputs("a")),
+            column(6, renderInputs("b"))
+          ),
+          fluidRow(
+            column(6,
+                   print(resultsA)
+            ),
+            column(6,
+                   print(resultsB)
+            )
           )
 )
